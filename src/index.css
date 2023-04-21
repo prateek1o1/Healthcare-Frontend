@@ -21,7 +21,7 @@ form {
   border-radius: 10px;    /* Added to round the corners of the border */
   padding: 20px;          /* Added to create some space between the border and the form elements */
   box-shadow: 2px 2px 5px rgba(94, 12, 12, 0.301); /* Added to create a subtle drop shadow */
-  background-color: #a467f3;  /* Added to set a light gray background color */
+  background-color: #bea1e6;  /* Added to set a light gray background color */
 }
 
 label {
@@ -41,16 +41,6 @@ input {
   font-size: 16px;
 }
 
-
-button {
-  padding: 10px;
-  border-radius: 3px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
-  display: block; 
-}
 
 .login-container {
   display: flex;

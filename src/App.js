@@ -122,49 +122,6 @@ const App = () => {
     </div>
     
   );
-
-//   return (
-//     <div>
-//       {/* <div class="card"> */}
-//       <div className='text-center page-header p-2 regular-text-shadow regular-shadow' id='' role='tab'>
-//           <h3 className='display-4 font-weight-bold mb-0'>
-//             Health Information System
-//           </h3>
-//         </div>
-
-      // <div>
-      // {
-      //     user === null &&
-      //     <Login startLogin={handleLogin}/>
-      // }
-      // </div>
-      // <div>
-      // {
-      //      user !== null && abhaid === null &&
-      //     <Abha  fetch={handleabhafetch}/>
-      // }
-      // </div>
-//       <div>
-//       {
-   //        abhaid !== null  &&
-     //     <Otp  setOtp={handleotp}/>
-//       }
-//        {   p_data != null &&
-//           <div style={{textAlign:'center'}}>
-//             {/* <div>{p_data}</div> */}
-
-//             <div> <b>Name :</b> {JSON.parse(p_data).name}</div>
-//             <div> <b>Gender:</b> {JSON.parse(p_data).gender}</div>
-//             <div> <b>yearOfBirth: </b> {JSON.parse(p_data).yearOfBirth}</div>
-//             <div> <b>monthOfBirth: </b> {JSON.parse(p_data).monthOfBirth}</div>
-//             <div> <b>dayOfBirth: </b> {JSON.parse(p_data).dayOfBirth}</div>
-//             <div> <b>Address: </b> {JSON.stringify(JSON.parse(p_data).address)} </div>
-//           </div>
-//       }
-      // </div>
-
-  //   </div>  
-  // );
 }
 
 export default App;
