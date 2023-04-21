@@ -10,13 +10,20 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  FormLabel
+  FormLabel, 
+  Grid
 } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
+  radioLabel: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: 'dark',
+    marginLeft: '10px',
+  },
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(3),
@@ -140,19 +147,70 @@ const HealthDataForm = ({ onSubmit }) => {
             style: { marginTop: "25px" }
           }}
         />
-         <FormControl component="fieldset">
-          <FormLabel component="legend">Health Information Types</FormLabel>
-          <RadioGroup
-            aria-label="healthInfoTypes"
-            name="healthInfoTypes"
-            value={formData.healthInfoTypes}
-            onChange={handleChange}
-          >
-            <FormControlLabel value="op consultation" control={<Radio />} label="OP Consultation"/>
-            <FormControlLabel value="prescription" control={<Radio />} label="Prescription" />
-            <FormControlLabel value="other" control={<Radio />} label="Other"/>
-          </RadioGroup>
-        </FormControl>
+       <Grid container spacing={3}>
+  <Grid item xs={12}>
+    <FormControl component="fieldset" spacing={1}>
+      <FormLabel component="legend" style={{ color: "blue" }}>Health Information Types</FormLabel>
+      <RadioGroup
+        aria-label="healthInfoTypes"
+        name="healthInfoTypes"
+        value={formData.healthInfoTypes}
+        onChange={handleChange}
+        row
+      >
+        <FormControlLabel
+          value="OPConsultation"
+          control={<Radio />}
+          label="OP Consultation"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="DiagnosticReport"
+          control={<Radio />}
+          label="Diagnostic Report"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="Prescription"
+          control={<Radio />}
+          label="Prescription"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="ImmunizationRecord"
+          control={<Radio />}
+          label="Immunization Record"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="DischargeSummary"
+          control={<Radio />}
+          label="Discharge Summary"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="HealthDocumentRecord"
+          control={<Radio />}
+          label="Health Document Record"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+        <FormControlLabel
+          value="WellnessRecord"
+          control={<Radio />}
+          label="Wellness Record"
+          labelPlacement="end"
+          classes={{ label: useStyles().radioLabel }}
+        />
+      </RadioGroup>
+    </FormControl>
+  </Grid>
+</Grid>
       </div>
       <Button
         className={classes.button}
