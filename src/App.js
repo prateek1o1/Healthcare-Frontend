@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import HealthDataForm from './components/HealthDataForm';
 import Login from './components/Login';
@@ -11,7 +11,6 @@ import Success from './components/Success';
 import AlreadyRegistered from './components/AlreadyRegistered';
 import Consent from './components/Consent';
 import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 
 const menuStyle = {
   display: 'flex',
