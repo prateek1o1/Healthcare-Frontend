@@ -6,6 +6,39 @@ import fetchService from '../services/fetchService';
 import modeservice from '../services/modeService';
 import otpservice from '../services/setOtpService';
 import { useNavigate } from 'react-router-dom';
+
+import { 
+  Button, 
+  TextField, 
+  InputLabel,
+  MenuItem,
+  Select,
+  FormControl
+} from '@material-ui/core';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '400px',
+    margin: 'auto',
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[2],
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+    '& .MuiButton-root': {
+      marginTop: theme.spacing(2),
+      alignSelf: 'center',
+    },
+  },
+}));
+
 const RegistrationForm = ({ onSubmit, onCancel }) => {
   const [abhaid ,setAbha] = useState(null)
   const navigate = useNavigate();
@@ -22,6 +55,7 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
     state: '',
     district: ''
   });
+  const classes = useStyles();
 
   useEffect(() =>{
     const fetchData = async ()=>{
@@ -129,73 +163,116 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
     }
     </div>
     
-  <div className="form-container">
-  <form onSubmit={handleSubmit}>
-    <label>
-      Health ID:
-      <input type="text" name="id" value={formData.id} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Name:
-      <input type="text" name="name" value={formData.name} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Gender:
-      <input type="text" name="gender" value={formData.gender} onChange={handleChange} />
-    </label>
-    <br />
-    {/* <label>
-      DOB:
-      <input type="date" name="dob" value={formData.dob} onChange={handleChange} />
-    </label>
-    <br /> */}
-     <label>
-      Year Of Birth:
-      <input type="text" name="year" value={formData.year} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Month Of Birth:
-      <input type="text" name="month" value={formData.month} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Day Of Birth:
-      <input type="text" name="day" value={formData.day} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Mobile:
-      <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      State:
-      <input type="text" name="state" value={formData.state} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      District:
-      <input type="text" name="district" value={formData.district} onChange={handleChange} />
-    </label>
-    <br />
-    <label className="form__label" htmlFor="Prerequisite">Doctors </label>
-            <select className="form-control" value={doctor} onChange={handleSetDoctor}>
-                    <option value="">Select doctor</option>
-                      {doctorsList.map(doctor => (
-                          <option value={doctor.id} key={doctor.id} > {doctor.email}</option>
-                            ))
-                       } 
-            </select>  
-    <br />
+    <form onSubmit={handleSubmit} className={classes.form}>
+      <TextField
+        label="Health ID"
+        name="id"
+        value={formData.id}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Gender"
+        name="gender"
+        value={formData.gender}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Year Of Birth"
+        name="year"
+        value={formData.year}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Month Of Birth"
+        name="month"
+        value={formData.month}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Day Of Birth"
+        name="day"
+        value={formData.day}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="Mobile"
+        name="mobile"
+        value={formData.mobile}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="State"
+        name="state"
+        value={formData.state}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+      <TextField
+        label="District"
+        name="district"
+        value={formData.district}
+        onChange={handleChange}
+        margin="normal"
+        required
+        fullWidth
+      />
+
+    <FormControl fullWidth margin="normal">
+  <InputLabel id="doctor-label">Doctors</InputLabel>
+  <Select
+    labelId="doctor-label"
+    id="doctor-select"
+    value={doctor}
+    onChange={handleSetDoctor}
+  >
+    <MenuItem value="">
+      <em>Select doctor</em>
+    </MenuItem>
+    {doctorsList.map(doctor => (
+      <MenuItem value={doctor.id} key={doctor.id}>
+        {doctor.email}
+      </MenuItem>
+    ))}
+  </Select>
+</FormControl>
     <div className="button-container">
-      <button type="submit">Register</button>
-      <button onClick={handleCancel}>Cancel</button>
-    </div>
-  </form>
+  <Button type="submit" variant="contained" color="primary"fullWidth>
+    Appoint
+  </Button>
+  <Button onClick={handleCancel} variant="contained" color="secondary">
+    Cancel
+  </Button>
 </div>
+  </form>
 </div>
   );
 };
