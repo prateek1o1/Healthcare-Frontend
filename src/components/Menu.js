@@ -1,6 +1,6 @@
 import React from 'react';
 import Ratio from 'react-bootstrap/Ratio';
-
+import Login from './Login';
 function Menu() {
   return (
     <div style={{ 
@@ -10,6 +10,8 @@ function Menu() {
       overflow: 'hidden',
     }}>
       <h1 className="cool-heading">Healthcare Application Development</h1>
+      <h1> Hello Mr {localStorage.getItem('currentUser')} </h1>
+      <h1> Job profile: {localStorage.getItem('currentUserRole')}  </h1>
       <Ratio aspectRatio="16x9">
         <embed 
           type="image/svg+xml" 

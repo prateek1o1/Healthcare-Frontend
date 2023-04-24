@@ -98,8 +98,8 @@ const App = () => {
             </div>
             <div>
               <Link to="/RegistrationForm" class="cool-link">New Patient Registration</Link>
-              <Link to="/HealthDataForm" class="cool-link">Doctor's Consultation</Link>
               <Link to="/AlreadyRegistered" class="cool-link">Already Registered</Link>
+              <Link to="/HealthDataForm" class="cool-link">Doctor's Consultation</Link>
               <Link to="/Consent" class="cool-link">Request Consent</Link>
               <Button onClick={handleLogout}>Logout</Button>
             </div>
