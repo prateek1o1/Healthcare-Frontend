@@ -10,6 +10,10 @@ import RegistrationForm from './components/RegistrationForm';
 import Success from './components/Success';
 import AlreadyRegistered from './components/AlreadyRegistered';
 import Consent from './components/Consent';
+import TransferedData from './components/TransferedData';
+import GetTransferedData from './components/GetTransferedData';
+import ConsentList from './components/ConsentList';
+import HipRecords from './components/HipRecords';
 import { Button } from 'react-bootstrap';
 
 const menuStyle = {
@@ -101,6 +105,8 @@ const App = () => {
               <Link to="/HealthDataForm" class="cool-link">Doctor's Consultation</Link>
               <Link to="/AlreadyRegistered" class="cool-link">Already Registered</Link>
               <Link to="/Consent" class="cool-link">Request Consent</Link>
+              <Link to="/ConsentList" class="cool-link">Consent List</Link>
+              <Link to="/HipRecords" class="cool-link">HIP Records</Link>
               <Button onClick={handleLogout}>Logout</Button>
             </div>
           </div>
@@ -111,8 +117,12 @@ const App = () => {
             <Route path="/PatientList" element={<PatientList/>} />
             <Route path="/success" element={<Success/>} />
             <Route path="/Consent" element = {<Consent/>} />
+            <Route path = '/ConsentList' element = {<ConsentList/>} />
+            <Route path = '/TransferedData' element = {<TransferedData/>} />
+            <Route path = '/GetTransferedData' element = {<GetTransferedData/>} />
+            <Route path = '/HipRecords' element = {<HipRecords/>} />
             <Route path ='/HealthDataForm' element = {<DoctorElement> <consult /> </DoctorElement>}> </Route>
-            
+          
             <Route path="*" element = {<div>Page Not Found</div>}/>
           </Routes>
         </div>
