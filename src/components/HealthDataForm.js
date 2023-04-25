@@ -9,7 +9,12 @@ const HealthDataForm = ({ onSubmit }) => {
   const navigate = useNavigate();
   const [ patientList, setpatientList] = useState([]);
   const [formData, setFormData] = useState({
-    prescription:''
+    symptoms:'',
+    medicine:'',
+    dosage:'',
+    pattern:'',
+    timings:'',
+    instruction:''
   });
   
   const handleChange = (event) => {
@@ -66,8 +71,40 @@ const HealthDataForm = ({ onSubmit }) => {
             </select>  
     <br />
       <label>
-      Prescription:
-        <input type="text" name="prescription" value={formData.prescription} onChange={handleChange} />
+      Symptoms:
+        <input type="text" name="symptoms" value={formData.symptoms} onChange={handleChange} />
+      </label>
+      <br />
+
+      <label>
+      Medicine:
+        <input type="text" name="medicine" value={formData.medicine} onChange={handleChange} />
+      </label>
+      <br />
+
+      <label>
+      Dosage:
+        <input type="text" name="dosage" value={formData.dosage} onChange={handleChange} />
+      </label>
+      <br />
+
+
+      <label>
+      Pattern:
+        <input type="text" name="pattern" value={formData.pattern} onChange={handleChange} />
+      </label>
+      <br />
+
+
+      <label>
+      Timings:
+        <input type="text" name="timings" value={formData.timings} onChange={handleChange} />
+      </label>
+      <br />
+
+      <label>
+      Instruction:
+        <input type="text" name="instruction" value={formData.instruction} onChange={handleChange} />
       </label>
       <br />
      
