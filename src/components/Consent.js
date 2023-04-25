@@ -81,6 +81,7 @@ const HealthDataForm = ({ onSubmit }) => {
   };
 
   return (
+    <register-form-1>
     <form className={classes.root} onSubmit={handleSubmit}>
       <div>
         <TextField
@@ -225,6 +226,7 @@ const HealthDataForm = ({ onSubmit }) => {
         Submit
       </Button>
     </form>
+    </register-form-1>
   );
 };
 
