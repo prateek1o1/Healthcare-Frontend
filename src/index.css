@@ -189,13 +189,38 @@ button:hover {
     min-height:100vh;
   }
 
+  .register-form-3 {
+    background-image: url('/logo7.jpg');
+    background-size: cover; /* Resize the image to cover the container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    min-height:100vh;
+  }
+  .register-form-4 {
+    background-image: url('/logo8.jpg');
+    background-size: cover; /* Resize the image to cover the container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    min-height:100vh;
+  }
+  .register-form-5 {
+    background-image: url('/logo9.jpg');
+    background-size: cover; /* Resize the image to cover the container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    min-height:100vh;
+  }
+  .register-form-6 {
+    background-image: url('/logo9.jpg');
+    background-size: cover; /* Resize the image to cover the container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    min-height:100vh;
+  }
+
 .cool-link {
   color: rgb(255, 255, 255); /* default link color */
   font-weight: bold; /* make the font bold */
   transition: all 0.2s ease-in-out; /* add a smooth transition effect */
   cursor: pointer; /* change the cursor to a pointer */
   text-decoration: none; /* remove the default underline */
-  padding: 75px;
+  padding: 25px;
 }
 
 .cool-link:hover {
@@ -209,6 +234,15 @@ button:hover {
   color: #ff00ff; /* Magenta */
   font-size: 48px;
   text-shadow: 2px 2px 4px #3d0149; /* Add a subtle drop shadow */
+}
+
+.table-cell {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.table-cell-bold {
+  font-weight: bold;
 }
 
 @keyframes move-left {
@@ -238,4 +272,6 @@ button:hover {
     color: #ce7af0; 
   }
 }
+
+
 
