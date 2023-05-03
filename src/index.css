@@ -208,7 +208,13 @@ button:hover {
     min-height:100vh;
   }
   .register-form-6 {
-    background-image: url('/logo9.jpg');
+    background-image: url('/logo10.jpg');
+    background-size: cover; /* Resize the image to cover the container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    min-height:100vh;
+  }
+  .register-form-7 {
+    background-image: url('/logo10.jpg');
     background-size: cover; /* Resize the image to cover the container */
     background-position: center center; /* Center the image horizontally and vertically */
     min-height:100vh;

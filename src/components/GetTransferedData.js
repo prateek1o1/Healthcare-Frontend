@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import notificationHandler from '../components/Notification';
+import { Table, TableHead, TableRow, TableCell, TableBody, TableContainer,Paper } from '@material-ui/core';
+
 const GetTransferedData = ({ onSubmit }) => {
   const [pData, setPdata] = useState(null)
 
@@ -24,59 +26,42 @@ const GetTransferedData = ({ onSubmit }) => {
 },[]);
 
   return (
-    <div>
+    <div className="register-form-7">
+      <div>
       {
         pData != null &&
-        //   {/* <div>{p_data}</div> */}
-        // <div>
-        // { !pData ? (
-        //   <div>Loading...</div>
-        // )
-        // :(
-
-        <table style={{ borderSpacing: '2px', border: '1px solid black' }}>
-          <thead>
-            <tr>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Abhaid</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Consent ID</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Symptoms</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Medicine</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Dosage</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Pattern</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Timings</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Instruction</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pData.map(item => (
-              <tr key={item.id}>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.abhaid}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.consentid}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.symptoms}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.medicine}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.dosage}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.pattern}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.timings}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.instruction}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        //         )}
-        // </div>
-
-
-
-        //             {/* <div> <b>symptoms :</b> {JSON.parse(p_data).symptoms}</div>
-        //             <div> <b>medicine:</b> {JSON.parse(p_data).medicine}</div>
-        //             <div> <b>dosage: </b> {JSON.parse(p_data).dosage}</div>
-        //             <div> <b>pattern: </b> {JSON.parse(p_data).pattern}</div>
-        //             <div> <b>timings: </b> {JSON.parse(p_data).timings}</div>
-        //             <div> <b>instruction: </b> {JSON.stringify(JSON.parse(p_data).instruction)} </div>
-        //           </div> */}
-
-        //           console.log("DATATAAA")
+        <TableContainer component={Paper}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Abhaid</TableCell>
+        <TableCell>Consent ID</TableCell>
+        <TableCell>Symptoms</TableCell>
+        <TableCell>Medicine</TableCell>
+        <TableCell>Dosage</TableCell>
+        <TableCell>Pattern</TableCell>
+        <TableCell>Timings</TableCell>
+        <TableCell>Instruction</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {pData.map((item) => (
+        <TableRow key={item.id}>
+          <TableCell>{item.abhaid}</TableCell>
+          <TableCell>{item.consentid}</TableCell>
+          <TableCell>{item.symptoms}</TableCell>
+          <TableCell>{item.medicine}</TableCell>
+          <TableCell>{item.dosage}</TableCell>
+          <TableCell>{item.pattern}</TableCell>
+          <TableCell>{item.timings}</TableCell>
+          <TableCell>{item.instruction}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</TableContainer>
       }
+    </div>
     </div>
   );
 };
