@@ -1,4 +1,5 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
+import { TextField, Button, Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
 
 function HipRecords() {
   const [inputValue, setInputValue] = useState("");
@@ -16,53 +17,54 @@ function HipRecords() {
   };
 
   return (
-    <div>
+    <div className="register-form-5 ">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+        <TextField
+          label={<span style={{ fontWeight: 'bold' , color: 'cyan' }}>ABHA</span>}
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
+          variant="outlined"
+          margin="normal"
         />
-        <button type="submit">Submit</button>
+        <br/>
+        <Button type="submit" variant="contained" color="primary" size="medium">
+          Submit
+        </Button>
       </form>
-      {
-
-<table>
-<thead>
-  <tr>
-    <th>ID</th>
-    <th>Visit ID</th>
-    <th>Symptoms</th>
-    <th>Medicine</th>
-    <th>Dosage</th>
-    <th>Pattern</th>
-    <th>Timings</th>
-    <th>Instruction</th>
-    <th>Date</th>
-    <th>Patient ID</th>
-    <th>Doctor ID</th>
-  </tr>
-</thead>
-<tbody>
-  {visits.map((item) => (
-    <tr key={item.id}>
-      <td>{item.id}</td>
-      <td>{item.vistid}</td>
-      <td>{item.symptoms}</td>
-      <td>{item.medicine}</td>
-      <td>{item.dosage}</td>
-      <td>{item.pattern}</td>
-      <td>{item.timings}</td>
-      <td>{item.instruction}</td>
-      <td>{item.date}</td>
-      <td>{item.patient.patientid}</td>
-      <td>{item.doctor.id}</td>
-    </tr>
-  ))}
-</tbody>
-</table>
-
-      }
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>ID</TableCell>
+            <TableCell>Visit ID</TableCell>
+            <TableCell>Symptoms</TableCell>
+            <TableCell>Medicine</TableCell>
+            <TableCell>Dosage</TableCell>
+            <TableCell>Pattern</TableCell>
+            <TableCell>Timings</TableCell>
+            <TableCell>Instruction</TableCell>
+            <TableCell>Date</TableCell>
+            <TableCell>Patient ID</TableCell>
+            <TableCell>Doctor ID</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {visits.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.vistid}</TableCell>
+              <TableCell>{item.symptoms}</TableCell>
+              <TableCell>{item.medicine}</TableCell>
+              <TableCell>{item.dosage}</TableCell>
+              <TableCell>{item.pattern}</TableCell>
+              <TableCell>{item.timings}</TableCell>
+              <TableCell>{item.instruction}</TableCell>
+              <TableCell>{item.date}</TableCell>
+              <TableCell>{item.patient.patientid}</TableCell>
+              <TableCell>{item.doctor.id}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }

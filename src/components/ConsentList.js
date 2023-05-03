@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
+import { Table, TableHead, TableRow, TableCell, TableBody, Button } from '@material-ui/core';
 
 const ConsentList = ({ onSubmit }) => {
     const [consentList, setConsentList] = useState([])
@@ -29,34 +30,34 @@ const ConsentList = ({ onSubmit }) => {
     }
 
     return (
-        <div>
-            <table style={{ borderSpacing: '0', borderCollapse: 'collapse', border: '1px solid black' }}>
-                <thead>
-                    <tr>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Consent ID</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Abhaid</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Expiry Date</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Date From</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Date To</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Submit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {consentList.map(row => (
-                        <tr key={row.id}>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>{row.consentId}</td>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>{row.abhaid}</td>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>{row.expiryDate}</td>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>{row.dateFrom}</td>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>{row.dateTo}</td>
-                            <td style={{ border: '1px solid black', padding: '5px' }}>
-                                <button onClick={() => handleRowSelect(row)}>Submit</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <div className='register-form-4'>
+    <Table className="table">
+        <TableHead>
+            <TableRow>
+                <TableCell className="table-cell-bold">Consent ID</TableCell>
+                <TableCell className="table-cell-bold">Abhaid</TableCell>
+                <TableCell className="table-cell-bold">Expiry Date</TableCell>
+                <TableCell className="table-cell-bold">Date From</TableCell>
+                <TableCell className="table-cell-bold">Date To</TableCell>
+                <TableCell className="table-cell-bold">Submit</TableCell>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {consentList.map(row => (
+                <TableRow key={row.id}>
+                    <TableCell className="table-cell">{row.consentId}</TableCell>
+                    <TableCell className="table-cell">{row.abhaid}</TableCell>
+                    <TableCell className="table-cell">{row.expiryDate}</TableCell>
+                    <TableCell className="table-cell">{row.dateFrom}</TableCell>
+                    <TableCell className="table-cell">{row.dateTo}</TableCell>
+                    <TableCell className="table-cell">
+                        <Button variant="contained" color="primary" onClick={() => handleRowSelect(row)}>Submit</Button>
+                    </TableCell>
+                </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+</div>
     );
 
 }

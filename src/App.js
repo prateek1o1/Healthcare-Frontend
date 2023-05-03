@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import HealthDataForm from './components/HealthDataForm';
-import Login from './components/Login';
 import Menu from './components/Menu';
 import PatientList from './components/PatientList';
 import RegistrationForm from './components/RegistrationForm';
@@ -15,6 +14,7 @@ import GetTransferedData from './components/GetTransferedData';
 import ConsentList from './components/ConsentList';
 import HipRecords from './components/HipRecords';
 import { Button } from 'react-bootstrap';
+
 
 const menuStyle = {
   display: 'flex',
@@ -89,11 +89,11 @@ const App = () => {
 
   return (
     <div>
-      {
+      {/* {
           user === null && <Login startLogin={handleLogin}/>
-      }
+      } */}
       {
-        user!==null &&
+        // user!==null &&
         
         <div>
           <div style={menuStyle}>

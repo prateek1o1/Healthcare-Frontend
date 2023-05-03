@@ -24,7 +24,7 @@ const TransferedData = ({ onSubmit }) => {
   };
 
   return (
-    <div>
+    <div className='register-form-7'>
       {
         pData === null &&
         <div>
