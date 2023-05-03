@@ -122,7 +122,6 @@ const App = () => {
             <Route path = '/GetTransferedData' element = {<GetTransferedData/>} />
             <Route path = '/HipRecords' element = {<HipRecords/>} />
             <Route path ='/HealthDataForm' element = {<DoctorElement> <consult /> </DoctorElement>}> </Route>
-          
             <Route path="*" element = {<div>Page Not Found</div>}/>
           </Routes>
         </div>

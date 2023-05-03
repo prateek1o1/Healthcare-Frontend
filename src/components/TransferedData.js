@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import notificationHandler from '../components/Notification';
+import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 
 const TransferedData = ({ onSubmit }) => {
   const [pData, setPdata] = useState(null)
@@ -24,71 +25,50 @@ const TransferedData = ({ onSubmit }) => {
   };
 
   return (
-    <div className='register-form-7'>
-      {
-        pData === null &&
-        <div>
-          <button className="styled-button" onClick={handleatransferedDataFetch}>Refresh!</button>
-          <br />
-
-          <h1>
-            Please Click On Refersh Button To Get Records
-          </h1>
-          <br />
-        </div>
-
-      }
-      {
-        pData != null &&
-        //   {/* <div>{p_data}</div> */}
-        // <div>
-        // { !pData ? (
-        //   <div>Loading...</div>
-        // )
-        // :(
-
-        <table style={{ borderSpacing: '2px', border: '1px solid black' }}>
-          <thead>
-            <tr>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Abhaid</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Symptoms</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Medicine</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Dosage</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Pattern</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Timings</th>
-              <th style={{ border: '1px solid black', padding: '5px' }}>Instruction</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pData.map(item => (
-              <tr key={item.id}>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.abhaid}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.symptoms}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.medicine}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.dosage}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.pattern}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.timings}</td>
-                <td style={{ border: '1px solid black', padding: '5px' }}>{item.instruction}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        //         )}
-        // </div>
-
-
-
-        //             {/* <div> <b>symptoms :</b> {JSON.parse(p_data).symptoms}</div>
-        //             <div> <b>medicine:</b> {JSON.parse(p_data).medicine}</div>
-        //             <div> <b>dosage: </b> {JSON.parse(p_data).dosage}</div>
-        //             <div> <b>pattern: </b> {JSON.parse(p_data).pattern}</div>
-        //             <div> <b>timings: </b> {JSON.parse(p_data).timings}</div>
-        //             <div> <b>instruction: </b> {JSON.stringify(JSON.parse(p_data).instruction)} </div>
-        //           </div> */}
-
-        //           console.log("DATATAAA")
-      }
-    </div>
+    <div className="register-form-6">
+  {pData === null && (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Typography variant="h3" style={{ color: 'orange' }}>Please click on refresh button to get records</Typography>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button variant="contained" color="primary" onClick={handleatransferedDataFetch} style={{ fontSize: '1.5rem', padding: '1rem' }}>
+          Refresh!
+        </Button>
+      </div>
+  </div>
+  )}
+  {pData != null && (
+    <TableContainer>
+      <Table style={{ borderSpacing: '2px', border: '1px solid black' }}>
+        <TableHead>
+          <TableRow>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Abhaid</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Symptoms</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Medicine</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Dosage</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Pattern</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Timings</TableCell>
+            <TableCell style={{ border: '1px solid black', padding: '5px' }}>Instruction</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {pData.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.abhaid}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.symptoms}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.medicine}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.dosage}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.pattern}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.timings}</TableCell>
+              <TableCell style={{ border: '1px solid black', padding: '5px' }}>{item.instruction}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  )}
+</div>
   );
 };
 
