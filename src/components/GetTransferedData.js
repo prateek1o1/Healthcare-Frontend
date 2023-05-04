@@ -48,7 +48,7 @@ const GetTransferedData = ({ onSubmit }) => {
       {pData.map((item) => (
         <TableRow key={item.id}>
           <TableCell>{item.abhaid}</TableCell>
-          <TableCell>{item.consentid}</TableCell>
+          <TableCell>{item.consentID}</TableCell>
           <TableCell>{item.symptoms}</TableCell>
           <TableCell>{item.medicine}</TableCell>
           <TableCell>{item.dosage}</TableCell>
