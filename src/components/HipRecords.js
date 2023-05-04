@@ -34,7 +34,6 @@ function HipRecords() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
             <TableCell>Visit ID</TableCell>
             <TableCell>Symptoms</TableCell>
             <TableCell>Medicine</TableCell>
@@ -43,14 +42,12 @@ function HipRecords() {
             <TableCell>Timings</TableCell>
             <TableCell>Instruction</TableCell>
             <TableCell>Date</TableCell>
-            <TableCell>Patient ID</TableCell>
             <TableCell>Doctor ID</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {visits.map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.id}</TableCell>
               <TableCell>{item.vistid}</TableCell>
               <TableCell>{item.symptoms}</TableCell>
               <TableCell>{item.medicine}</TableCell>
@@ -59,8 +56,7 @@ function HipRecords() {
               <TableCell>{item.timings}</TableCell>
               <TableCell>{item.instruction}</TableCell>
               <TableCell>{item.date}</TableCell>
-              <TableCell>{item.patient.patientid}</TableCell>
-              <TableCell>{item.doctor.id}</TableCell>
+              <TableCell>{item.doctor.name}</TableCell>
             </TableRow>
           ))}
         </TableBody>

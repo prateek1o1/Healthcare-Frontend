@@ -13,6 +13,7 @@ import TransferedData from './components/TransferedData';
 import GetTransferedData from './components/GetTransferedData';
 import ConsentList from './components/ConsentList';
 import HipRecords from './components/HipRecords';
+import Login from './components/Login';
 import { Button } from 'react-bootstrap';
 
 
@@ -89,11 +90,11 @@ const App = () => {
 
   return (
     <div>
-      {/* {
-          user === null && <Login startLogin={handleLogin}/>
-      } */}
       {
-        // user!==null &&
+          user === null && <Login startLogin={handleLogin}/>
+      }
+      {
+        user!==null &&
         
         <div>
           <div style={menuStyle}>

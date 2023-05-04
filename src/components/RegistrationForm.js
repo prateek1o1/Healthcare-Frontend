@@ -259,7 +259,7 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
     </MenuItem>
     {doctorsList.map(doctor => (
       <MenuItem value={doctor.id} key={doctor.id}>
-        {doctor.email}
+        {doctor.name}
       </MenuItem>
     ))}
   </Select>
