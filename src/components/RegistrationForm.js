@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import Abha from '../components/Abha';
-import notificationHandler from '../components/Notification';
+import Notification from '../components/Notification';
 import Otp from '../components/Otp';
 import fetchService from '../services/fetchService';
 import modeservice from '../services/modeService';
@@ -82,7 +82,7 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
       console.log("Done");
       navigate("/success");
     } catch (exception) {
-      notificationHandler(`Update failed`, 'error');
+      Notification(`Update failed`, 'error');
     }
   };
 
@@ -103,16 +103,18 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
       const status = await fetchService.fetchStatus(id);
       if(status=="Success"){
         setAbha(id);
-        await modeservice.selectmode("MOBILE_OTP")
-        console.log("MOBILE_OTP")
-        notificationHandler(`Organisation updated successfully response ${fetchobject}`, 'success');
+        await modeservice.selectmode("MOBILE_OTP");
+        console.log("MOBILE_OTP");
+        //const successNotification = <Notification notification="Your operation was successful!" type="success" />;
       }
       else{
+        alert("Enter Correct ABHA ID");
+        //const successNotification = <Notification notification="Your operation was successful!" type="error" />;
           setAbha(null);
       }
     }
     catch (exception) {
-      notificationHandler(`Update failed`, 'error');
+      Notification(`Please Enter correct ABHA ID`, 'error');
     }
   };
 
@@ -125,10 +127,10 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
   const handleotp = async (authcode) =>{
     try{
       const otpobject = await otpservice.setOtp(authcode);
-      notificationHandler(`Organisation updated successfully response ${otpobject}`, 'success')
+      //(`Organisation updated successfully response ${otpobject}`, 'success')
     }
     catch (exception) {
-      notificationHandler(`Update failed`, 'error')
+      //(`Update failed`, 'error')
     }
   };
 
