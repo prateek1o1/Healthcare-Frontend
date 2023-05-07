@@ -91,14 +91,25 @@ const RegistrationForm = ({ onSubmit, onCancel }) => {
     onCancel();
   };
 
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
 
   const handleabhafetch = async (id) =>{
     try{
-      setAbha(id);
       const fetchobject = await fetchService.fetch(id);
-      await modeservice.selectmode("MOBILE_OTP")
-      console.log("MOBILE_OTP")
-      notificationHandler(`Organisation updated successfully response ${fetchobject}`, 'success');
+      await delay(5000);
+      const status = await fetchService.fetchStatus(id);
+      if(status=="Success"){
+        setAbha(id);
+        await modeservice.selectmode("MOBILE_OTP")
+        console.log("MOBILE_OTP")
+        notificationHandler(`Organisation updated successfully response ${fetchobject}`, 'success');
+      }
+      else{
+          setAbha(null);
+      }
     }
     catch (exception) {
       notificationHandler(`Update failed`, 'error');
