@@ -14,6 +14,7 @@ import GetTransferedData from './components/GetTransferedData';
 import ConsentList from './components/ConsentList';
 import HipRecords from './components/HipRecords';
 import Login from './components/Login';
+import Notification from './components/Notification';
 import { Button } from 'react-bootstrap';
 
 
